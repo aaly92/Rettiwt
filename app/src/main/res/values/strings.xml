@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Rettiwt</string>
+    <string name="oauth_login_button">Oauth login</string>
+</resources>
