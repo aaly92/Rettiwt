@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Rettiwt</string>
     <string name="oauth_login_button">Oauth login</string>
+    <string name="login_btn_txt">Login to Twitter</string>
+    <string name="logout_btn_txt">Logout of Twitter</string>
 </resources>
