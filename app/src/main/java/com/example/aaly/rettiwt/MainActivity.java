@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isConnectedToInternet() {
-        ConnectionDetector connectionDetector = new ConnectionDetector(getApplicationContext());
+        ConnectionDetector connectionDetector = new ConnectionDetector();
         if (!connectionDetector.isConnectingToInternet()) {
             Toast.makeText(this, ALERT_NO_INTERNET_CONNECTION_MESSAGE, Toast.LENGTH_SHORT).show();
             return false;
