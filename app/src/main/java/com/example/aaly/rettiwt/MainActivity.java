@@ -45,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String TWITTER_LOGIN_ERROR = "Twitter Login Error";
 
 
-    private static Twitter twitter;
-    private static RequestToken requestToken;
-    private static SharedPreferences sharedPreferences;
+    private Twitter twitter;
+    private RequestToken requestToken;
+    private SharedPreferences sharedPreferences;
     private ConnectionDetector connectionDetector;
 
     @BindView(R.id.username_label)
