@@ -10,28 +10,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.aaly.rettiwt.MainActivity">
 
-    <Button android:id="@+id/twitter_login_btn"
+    <Button
+        android:id="@+id/twitter_login_btn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/login_btn_txt"
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
-        android:layout_marginTop="30dip"/>
+        android:layout_marginTop="30dip"
+        android:text="@string/login_btn_txt" />
 
-    <Button android:id="@+id/twitter_logout_btn"
+    <Button
+        android:id="@+id/twitter_logout_btn"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/logout_btn_txt"
         android:layout_marginLeft="10dip"
         android:layout_marginRight="10dip"
         android:layout_marginTop="50dip"
-        />
+        android:text="@string/logout_btn_txt" />
 
-    <TextView android:id="@+id/username_label"
+    <TextView
+        android:id="@+id/username_label"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="10dip"
-        android:layout_marginTop="30dip"/>
+        android:layout_marginTop="30dip"
+        android:padding="10dip" />
 
 
 </LinearLayout>
