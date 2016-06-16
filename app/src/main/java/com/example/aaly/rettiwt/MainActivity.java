@@ -188,8 +188,7 @@ public class MainActivity extends AppCompatActivity {
                         twitter = factory.getInstance();
                         long userID = Long.parseLong(sharedPreferences.getString(PREF_KEY_USER_ID, ""));
                         final User user = twitter.showUser(userID);
-                        ResponseList<Status> timeLine = null;
-                        timeLine = twitter.getUserTimeline(userID);
+                        ResponseList<Status> timeLine = twitter.getUserTimeline(userID);
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
