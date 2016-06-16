@@ -12,8 +12,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.aaly.rettiwt.data.remote.ConnectionDetector;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -72,9 +70,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         sharedPreferences = getApplicationContext().getSharedPreferences(SHARED_PREF_KEY, 0);
-        if (!isConnectedToInternet()) {
-            return;
-        }
         if (!isLoggedIn()) {
             Uri uri = getIntent().getData();
             if (uri != null && uri.toString().startsWith(TWITTER_CALLBACK_URL)) {
@@ -89,15 +84,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         getTwitterFeed();
-    }
-
-    private boolean isConnectedToInternet() {
-        if (!ConnectionDetector.isConnectingToInternet()) {
-            Toast.makeText(this, ALERT_NO_INTERNET_CONNECTION_MESSAGE, Toast.LENGTH_SHORT).show();
-            return false;
-        } else {
-            return true;
-        }
     }
 
     private boolean isLoggedIn() {
