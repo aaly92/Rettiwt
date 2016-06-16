@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.aaly.rettiwt.data.remote.ConnectionDetector;
 
@@ -38,16 +39,16 @@ public class MainActivity extends AppCompatActivity {
     static final String PREF_KEY_TWITTER_LOGIN = "isTwitterLogedIn";
     static final String TWITTER_CALLBACK_URL = "oauth://t4jsample";
 
-    static final String ALERT_NO_INTERNET_CONNECTION_TITLE = "Internet Connection Error";
     static final String ALERT_NO_INTERNET_CONNECTION_MESSAGE = "Please connect to the Internet";
+    static final String SHARED_PREF_KEY = "MyPref";
 
     static final String TWITTER_LOGIN_ERROR = "Twitter Login Error";
+
 
     private static Twitter twitter;
     private static RequestToken requestToken;
     private static SharedPreferences sharedPreferences;
     private ConnectionDetector connectionDetector;
-    private AlertDialogManager alert = new AlertDialogManager();
 
     @BindView(R.id.username_label)
     TextView usernameLabel;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        sharedPreferences = getApplicationContext().getSharedPreferences("MyPref", 0);
+        sharedPreferences = getApplicationContext().getSharedPreferences(SHARED_PREF_KEY, 0);
         if (!isConnectedToInternet()) {
             return;
         }
@@ -94,8 +95,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isConnectedToInternet() {
         connectionDetector = new ConnectionDetector(getApplicationContext());
         if (!connectionDetector.isConnectingToInternet()) {
-            alert.showAlertDialog(MainActivity.this, ALERT_NO_INTERNET_CONNECTION_TITLE,
-                    ALERT_NO_INTERNET_CONNECTION_MESSAGE, false);
+            Toast.makeText(this, ALERT_NO_INTERNET_CONNECTION_MESSAGE, Toast.LENGTH_SHORT).show();
             return false;
         } else {
             return true;
