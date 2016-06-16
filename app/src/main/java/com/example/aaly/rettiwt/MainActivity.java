@@ -32,17 +32,17 @@ public class MainActivity extends AppCompatActivity {
     private static final String TWITTER_CONSUMER_KEY = "GlDm2ZWJpW0hT3sWJTf1h53Jf";
     private static final String TWITTER_CONSUMER_SECRET = "9mx1VF2dBym190StEPdJa2B7X49fwThe1JmbVWjonI9mLrkCpl";
 
-    static final String URL_TWITTER_OAUTH_VERIFIER = "oauth_verifier";
-    static final String PREF_KEY_OAUTH_TOKEN = "oauth_token";
-    static final String PREF_KEY_USER_ID = "user_id";
-    static final String PREF_KEY_OAUTH_SECRET = "oauth_token_secret";
-    static final String PREF_KEY_TWITTER_LOGIN = "isTwitterLogedIn";
-    static final String TWITTER_CALLBACK_URL = "oauth://t4jsample";
+    private static final String URL_TWITTER_OAUTH_VERIFIER = "oauth_verifier";
+    private static final String PREF_KEY_OAUTH_TOKEN = "oauth_token";
+    private static final String PREF_KEY_USER_ID = "user_id";
+    private static final String PREF_KEY_OAUTH_SECRET = "oauth_token_secret";
+    private static final String PREF_KEY_TWITTER_LOGIN = "isTwitterLogedIn";
+    private static final String TWITTER_CALLBACK_URL = "oauth://t4jsample";
 
-    static final String ALERT_NO_INTERNET_CONNECTION_MESSAGE = "Please connect to the Internet";
-    static final String SHARED_PREF_KEY = "MyPref";
+    private static final String ALERT_NO_INTERNET_CONNECTION_MESSAGE = "Please connect to the Internet";
+    private static final String SHARED_PREF_KEY = "MyPref";
 
-    static final String TWITTER_LOGIN_ERROR = "Twitter Login Error";
+    private static final String TWITTER_LOGIN_ERROR = "Twitter Login Error";
 
 
     private static Twitter twitter;
