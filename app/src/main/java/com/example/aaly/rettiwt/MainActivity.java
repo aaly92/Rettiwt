@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     private Twitter twitter;
     private RequestToken requestToken;
     private SharedPreferences sharedPreferences;
-    private ConnectionDetector connectionDetector;
 
     @BindView(R.id.username_label)
     TextView usernameLabel;
@@ -93,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean isConnectedToInternet() {
-        connectionDetector = new ConnectionDetector(getApplicationContext());
+        ConnectionDetector connectionDetector = new ConnectionDetector(getApplicationContext());
         if (!connectionDetector.isConnectingToInternet()) {
             Toast.makeText(this, ALERT_NO_INTERNET_CONNECTION_MESSAGE, Toast.LENGTH_SHORT).show();
             return false;
@@ -146,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
                     e.putString(PREF_KEY_OAUTH_SECRET, accessToken.getTokenSecret());
                     e.putString(PREF_KEY_USER_ID, Long.toString(accessToken.getUserId()));
                     e.putBoolean(PREF_KEY_TWITTER_LOGIN, true);
-                    e.commit();
+                    e.apply();
                     getTwitterFeed();
                 } catch (Exception e) {
                     Log.e(TWITTER_LOGIN_ERROR, "> " + e.getMessage());
@@ -161,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         e.remove(PREF_KEY_OAUTH_TOKEN);
         e.remove(PREF_KEY_OAUTH_SECRET);
         e.remove(PREF_KEY_TWITTER_LOGIN);
-        e.commit();
+        e.apply();
 
         twitterLogoutBtn.setVisibility(View.GONE);
         usernameLabel.setText("");
